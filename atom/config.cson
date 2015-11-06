@@ -1,0 +1,53 @@
+"*":
+  "exception-reporting":
+    userId: "8a60e159-504f-59f1-a1a6-f2121c3498f1"
+  welcome:
+    showOnStartup: false
+  core:
+    audioBeep: false
+    ignoredNames: [
+      ".keep"
+    ]
+    disabledPackages: [
+      "linter-rubocop"
+    ]
+  editor:
+    invisibles: {}
+    fontFamily: "Menlo "
+    softWrap: true
+    showIndentGuide: true
+    preferredLineLength: 100
+    scrollPastEnd: true
+    showInvisibles: true
+    softWrapAtPreferredLineLength: true
+    fontSize: 15
+  "one-dark-ui":
+    layoutMode: "Compact"
+    fontSize: 14
+  "linter-rubocop":
+    executablePath: "/Users/octopanda/.rvm/gems/ruby-2.2.2/bin/rubocop"
+  "atom-material-ui":
+    accentColor: "Green"
+    disableAnimations: true
+    compactTreeView: true
+    panelContrast: true
+    rippleAccentColor: true
+    slimScrollbar: true
+  "git-plus": {}
+  linter: {}
+  "go-plus":
+    formatTool: "gofmt"
+    showPanelWhenNoIssuesExist: true
+    runCoverageOnSave: true
+    goPath: "/Users/octopanda/Work/GoLangProjects"
+  "file-icons":
+    onChanges: true
+  "atom-beautify":
+    _analyticsUserId: "ee9ccd46-ddbd-4aa4-ab88-66b7bd7425df"
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  "symbols-tree-view":
+    autoHide: true
+".basic.html.text":
+  editor:
+    preferredLineLength: 100
