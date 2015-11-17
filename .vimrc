@@ -6,9 +6,8 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'git://github.com/altercation/vim-colors-solarized.git'
 Plugin 'git://github.com/gorodinskiy/vim-coloresque.git'
-Plugin 'nanotech/jellybeans.vim'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'git://github.com/scrooloose/nerdtree.git'
 Plugin 'mileszs/ack.vim'
 Plugin 'bling/vim-airline'
@@ -28,9 +27,12 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
 Plugin 'xolox/vim-misc'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'morhetz/gruvbox'
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'garyburd/go-explorer'
+Plugin 'mkarmona/materialbox'
+Plugin 'Shougo/neosnippet-snippets'
 
 call vundle#end()
 filetype plugin indent on
@@ -53,12 +55,17 @@ if has('mouse')
   set mouse=a
 endif
 
-"set t_Co=256 " 256 colors
-"syntax on " syntax highlighting
-colorscheme gruvbox
+syntax enable
+set guifont=PragmataPro:h15
 set background=dark
-let g:gruvbox_termcolors=256
-"let g:airline_theme="jellybeans"
+colorscheme solarized
+let g:solarized_termcolors=256
+let g:solarized_visibility= "low"
+let g:airline_theme='term'
+set guioptions-=T " Removes top toolbar
+set guioptions-=r " Removes right hand scroll bar
+set go-=L " Removes left hand scroll bar
+
 
 set encoding=utf-8
 set fileencodings=utf-8,cp1251
@@ -90,7 +97,7 @@ set statusline=%<%f%h%m%r\ %b\ %{&encoding}\ 0x\ \ %l,%c%V\ %P
 set laststatus=2
 
 " Включаем "умные" отспупы ( например, автоотступ после {)
-" set smartindent
+set smartindent
 " Меню выбора кодировки текста (koi8-r, cp1251, cp866, utf8)
 set wildmenu
 set wcm=<Tab>
