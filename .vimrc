@@ -6,13 +6,13 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'git://github.com/gorodinskiy/vim-coloresque.git'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'git://github.com/scrooloose/nerdtree.git'
 Plugin 'mileszs/ack.vim'
-Plugin 'bling/vim-airline'
 Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
+Plugin 'itchyny/lightline.vim'
 Plugin 'mbbill/undotree'
 Plugin 'ervandew/supertab'
 Plugin 'slim-template/vim-slim.git'
@@ -29,10 +29,11 @@ Plugin 'xolox/vim-misc'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe', { 'do': './install.py ->gocode-completer ->tern-completer' }
 Plugin 'garyburd/go-explorer'
-Plugin 'mkarmona/materialbox'
 Plugin 'Shougo/neosnippet-snippets'
+Plugin 'chriskempson/base16-vim'
+Plugin 'felixjung/vim-base16-lightline'
 
 call vundle#end()
 filetype plugin indent on
@@ -40,6 +41,12 @@ syntax on
 filetype on
 filetype plugin indent on
 let mapleader=","
+
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+highlight lCursor guifg=NONE guibg=Cyan
+setlocal spell spelllang=ru_ru,en_us
 
 set noswapfile
 " Sets how many lines of history VIM has to remember
@@ -57,11 +64,17 @@ endif
 
 syntax enable
 set guifont=PragmataPro:h15
+set t_Co=256
 set background=dark
-colorscheme solarized
-let g:solarized_termcolors=256
-let g:solarized_visibility= "low"
-let g:airline_theme='term'
+let base16colorspace=256
+colorscheme base16-tomorrow
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_linecolumn_prefix = '¶ '
+let g:airline_fugitive_prefix = '⎇ '
+let g:airline_paste_symbol = 'ρ'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
@@ -82,7 +95,7 @@ set title
 set showcmd
 set hidden
 set nofoldenable
-set nowrap
+set wrap
 set number
 set hlsearch
 set ignorecase
@@ -236,3 +249,7 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:lightline = {
+  \ 'colorscheme': 'base16_ocean',
+  \ }
+

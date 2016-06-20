@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/octopanda/.oh-my-zsh
+export ZSH=/Users/andrewdruzinin/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -55,8 +55,9 @@ plugins=(git brew colorize osx ruby rake)
 
 export PATH="$PATH:/usr/local/pcre/bin:/Users/octopanda/.rvm/gems/ruby-2.2.2/bin:/Users/octopanda/.rvm/gems/ruby-2.2.2@global/bin:/Users/octopanda/.rvm/rubies/ruby-2.2.2/bin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/go/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
-export GOPATH=/Users/octopanda/Work/GoLangProjects
+export GOPATH=/Users/andrewdruzinin/Work/GoLangProjects
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
@@ -124,3 +125,9 @@ alias tma='tmux attach -d -t'
 alias git-tmux='tmux new -s $(basename $(pwd))'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export EDITOR='vim'
+
+# Base16 Shell
+BASE16_SCHEME="tomorrow"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
